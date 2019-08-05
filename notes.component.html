@@ -1,0 +1,24 @@
+<input type="text" name="" value= ""  placeholder="Search stock you want to predict" #newNoteName>
+<button type="button" name="button" (click) = "this.getNotes(newNoteName.value)">
+  search
+</button>
+
+<div class="currentStock">
+    <table border="1">
+      <tr *ngIf="currentStocks !== undefined">
+        <td>{{this.currentStocks.name}}</td>
+        <td *ngFor="let p of this.currentStocks.prices">{{p}}</td>
+      </tr>
+    </table>
+</div>
+
+<div class="pastStock">
+
+    <table border="1">
+     <tr *ngFor="let past of this.pastStocks">
+       <td>{{past.name}}</td>
+       <td>{{past.searchTime}}</td>
+       <td *ngFor="let p of past.prices">{{p}}</td>
+     </tr>
+    </table>
+</div>
