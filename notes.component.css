@@ -1,1 +1,58 @@
+.search {
+    width: 100%;
+    position: relative;
+    display:inline-flex;
+    margin-bottom: 50px;
+  }
 
+  .searchTerm {
+    padding: 10px;
+   font-size: 17px;
+   border: 1px solid grey;
+   float: left;
+   width: 80%;
+   background: #f1f1f1;
+   border-radius: 10px 0px 0px 10px;
+   text-align: left;
+  }
+
+  .searchTerm:focus{
+    color:rgb(20, 20, 20);
+  }
+
+  .searchButton {
+
+    float: left;
+      width: 20%;
+      padding: 15px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      border-radius: 0px 33px 33px 0px;
+      cursor: pointer;
+      text-align: center;
+
+
+  }
+.current
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.current td, .current th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+.current th{
+	background: linear-gradient(#333 0%,#444 100%);
+	color: #FFF; font-weight: bold;
+	height: 40px;
+}
+.current tr:nth-child(even) td { background: rgba(235,233,249,1); }
+.currentStock{
+
+}

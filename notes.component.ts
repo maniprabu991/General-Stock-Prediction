@@ -8,18 +8,22 @@ import { NoteClass } from '../note';
 })
 export class NotesComponent implements OnInit {
   private currentStocks : NoteClass;
-   private pastStocks: NoteClass[] = [];
-  constructor(private noteservice: NoteService ) { }
+  private pastStocks: NoteClass[] = [];
+   constructor(private noteservice: NoteService ) {}
 
   ngOnInit() {
   }
   getNotes(name : string): void {
 
-      this.currentStocks = this.noteservice.getNotes(name);
+    this.currentStocks = this.noteservice.getNotes(name);
+    this.currentStocks.searchTime = (new Date()).toTimeString();
 
-      //Adding to pastStocks
-      this.currentStocks.searchTime = (new Date()).toTimeString();
-      this.pastStocks.push(this.currentStocks);
+    const newStock: NoteClass = {
+      name: name,
+      prices: this.currentStocks.prices,
+      searchTime: (new Date()).toTimeString()
+    };
+    this.pastStocks.push(newStock);
 
-    }
+  }
 }
